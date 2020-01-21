@@ -64,7 +64,8 @@ function getRandomQuote(){
   var randomNumber = Math.floor(Math.random() * (quotes.length - 1));
   theQuote = quotes[randomNumber].quote;
   theSource = quotes[randomNumber].source;
-  return theQuote;
+  theTitle = quotes[randomNumber].citation;
+  theYear = quotes[randomNumber].year;
 }
 console.log(getRandomQuote());
 
@@ -73,11 +74,19 @@ console.log(getRandomQuote());
  * `printQuote` function
 ***/
 function printQuote(){
+  getRandomQuote();
   messageToPrint += '<p class="quote">' + theQuote + '</p>';
-  messageToPrint += '<p class="source">' + theSource + '</p>'; 
+  messageToPrint += '<p class="source">' + theSource;
+    if(theTitle !== undefined){
+      messageToPrint += '<span class="citation">' + theTitle + '</span>';
+    };
+    if(theYear !== undefined){
+      messageToPrint += '<span class="year">' + theYear + '</span>';
+    }; +  '</p>'; 
+
   quoteBox.innerHTML = messageToPrint;
 }
-//console.log(messageToPrint);
+
 
 /***
  * click event listener for the print quote button

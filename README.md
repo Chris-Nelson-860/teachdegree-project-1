@@ -1,4 +1,4 @@
-# techdegree-project-1
+# Techdegree-project-1
 This is the first project in the full stack JavaScript program.  The goal of the project was to create a random quote generator.
 
 **Below is a description of my approach**

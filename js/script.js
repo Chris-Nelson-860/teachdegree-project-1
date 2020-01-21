@@ -73,7 +73,7 @@ console.log(getRandomQuote());
  * `printQuote` function
 ***/
 function printQuote(){
-  messageToPrint += '<p class="quote">"' + theQuote + '</p>';
+  messageToPrint += '<p class="quote">' + theQuote + '</p>';
   messageToPrint += '<p class="source">' + theSource + '</p>'; 
   quoteBox.innerHTML = messageToPrint;
 }

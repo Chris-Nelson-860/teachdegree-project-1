@@ -10,6 +10,9 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
+
+
+//This is an array some of my favorite motivational quotes.
 var quotes = [
   {
     quote: "You can fail at what you don't want, so might as well take a chance on doing what you love",
@@ -45,7 +48,7 @@ var quotes = [
   }
 ]
 
-//Set some variables for the getRandomQuoteFunction
+//Set my variables for the getRandomQuoteFunction
 var theQuote;
 var theSource;
 var theTitle;
@@ -59,7 +62,8 @@ var messageToPrint ='';
  * `getRandomQuote` function
 ***/
 
-
+//I use the Math.random function that will generate a number that is between 0 and one less than the length of the array (because the index numbers start with zero.)
+//Then I stored each property of the quote object in a variable so that I can piece it together later into the quote.
 function getRandomQuote(){
   var randomNumber = Math.floor(Math.random() * (quotes.length - 1));
   theQuote = quotes[randomNumber].quote;
@@ -67,12 +71,18 @@ function getRandomQuote(){
   theTitle = quotes[randomNumber].citation;
   theYear = quotes[randomNumber].year;
 }
-console.log(getRandomQuote());
+
 
 
 /***
  * `printQuote` function
 ***/
+
+//The print quote function calls the get random quote function 
+//Next it prints out the properties of the quote which are stored in variables.
+//There are two properties that are not in all of the quote objects.
+//The if statements will print out the properties if their value is not undefined.
+
 function printQuote(){
   getRandomQuote();
   messageToPrint += '<p class="quote">' + theQuote + '</p>';

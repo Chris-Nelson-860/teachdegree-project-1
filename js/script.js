@@ -48,13 +48,10 @@ var quotes = [
   }
 ]
 
-//Set my variables for the getRandomQuoteFunction
-var theQuote;
-var theSource;
-var theTitle;
-var theYear;
+
+
 var quoteBox = document.getElementById("quote-box");
-var messageToPrint ='';
+
 
 
 
@@ -62,14 +59,11 @@ var messageToPrint ='';
  * `getRandomQuote` function
 ***/
 
-//I use the Math.random function that will generate a number that is between 0 and one less than the length of the array (because the index numbers start with zero.)
-//Then I stored each property of the quote object in a variable so that I can piece it together later into the quote.
+//I use the Math.random function that will generate a number that is between 0 and the length of the array.  Then I will return the object that is located in the corresponding index number in the quotes array.
+
 function getRandomQuote(){
-  var randomNumber = Math.floor(Math.random() * (quotes.length - 1));
-  theQuote = quotes[randomNumber].quote;
-  theSource = quotes[randomNumber].source;
-  theTitle = quotes[randomNumber].citation;
-  theYear = quotes[randomNumber].year;
+  var randomNumber = Math.floor(Math.random() * quotes.length);
+  return quotes[randomNumber];
 }
 
 
@@ -78,20 +72,22 @@ function getRandomQuote(){
  * `printQuote` function
 ***/
 
-//The print quote function calls the get random quote function 
-//Next it prints out the properties of the quote which are stored in variables.
+//Store the result of the printQuote function in the objectToPrint variable.
+//Set variable messageToPrint tat will be made of of the different elements of the quote.
 //There are two properties that are not in all of the quote objects.
 //The if statements will print out the properties if their value is not undefined.
 
 function printQuote(){
-  getRandomQuote();
-  messageToPrint += '<p class="quote">' + theQuote + '</p>';
-  messageToPrint += '<p class="source">' + theSource;
-    if(theTitle !== undefined){
-      messageToPrint += '<span class="citation">' + theTitle + '</span>';
+  
+  let objectToPrint = getRandomQuote();
+  let messageToPrint = '';
+  messageToPrint += '<p class="quote">' + objectToPrint.quote + '</p>';
+  messageToPrint += '<p class="source">' + objectToPrint.source;
+    if(objectToPrint.citation !== undefined){
+      messageToPrint += '<span class="citation">' + objectToPrint.citation + '</span>';
     };
-    if(theYear !== undefined){
-      messageToPrint += '<span class="year">' + theYear + '</span>';
+    if(objectToPrint.year !== undefined){
+      messageToPrint += '<span class="year">' + objectToPrint.year + '</span>';
     }; +  '</p>'; 
 
   quoteBox.innerHTML = messageToPrint;

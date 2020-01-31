@@ -1,18 +1,4 @@
-/******************************************
-Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
-******************************************/
-
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
-/*** 
- * `quotes` array 
-***/
-
-
-//This is an array some of my favorite motivational quotes.
+//This is an array some of my favorite motivational quotes.  The qotes are objects consisting of a quote, the source and optionally the citation and year.
 var quotes = [
   {
     quote: "You can fail at what you don't want, so might as well take a chance on doing what you love",
@@ -61,7 +47,7 @@ var quoteBox = document.getElementById("quote-box");
 
 //I use the Math.random function that will generate a number that is between 0 and the length of the array.  Then I will return the object that is located in the corresponding index number in the quotes array.
 
-function getRandomQuote(){
+getRandomQuote = () =>{
   var randomNumber = Math.floor(Math.random() * quotes.length);
   return quotes[randomNumber];
 }
@@ -77,7 +63,7 @@ function getRandomQuote(){
 //There are two properties that are not in all of the quote objects.
 //The if statements will print out the properties if their value is not undefined.
 
-function printQuote(){
+printQuote = () =>{
   
   let objectToPrint = getRandomQuote();
   let messageToPrint = '';

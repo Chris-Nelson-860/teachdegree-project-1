@@ -11,4 +11,4 @@ This is the first project in the full stack JavaScript program.  The goal of the
     - *I created a new branch to work on each step of the project and then merged it back into master once it was complete and functioning.*
     - *I used git from the command line to do this because I have been told that it is very important to know how to use git from the command line if you want to become a professional developer.*
 
-3. Next I created a function that would print out the appropriate quote.  The tricky part of this was that some of the quotes had more properties than others.  I had to use an if statement that would not print out properties that were undefined.
+3. Next I created a function that would print out the appropriate quote.  The tricky part of this was that some of the quotes had more properties than others.  I had to use an if statement that would not print out properties that were undefined...
